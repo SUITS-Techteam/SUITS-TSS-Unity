@@ -1,0 +1,7 @@
+{
+	"name": "suits.tss.samplescript",
+	"references": [
+		"suits.tss",
+		"endel.nativewebsocket"
+	]
+}
