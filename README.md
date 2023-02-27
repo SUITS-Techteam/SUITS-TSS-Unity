@@ -9,6 +9,6 @@ Feel free to use it directly in your project, or just to get an idea of how you 
 3. You should be able to use the package in your project now.
 4. To look at a sample, import the sample called SampleTSSScene (you can import samples from Unity Package Manager or copy and paste the sample files)
 5. Add the scene titled `SampleScene` from `Samples/SampleTSSScene/SampleScene.unity` to your project.
-Replace the missing script with ConnScript
+    - You may run into an issue where the TSSConnectionObject Game Object is missing a script. To fix it, you can view TSSConnectionObject's components. Replace the missing script with ConnScript.
 6. The sample should be ready to run. It just has a canvas with a text input field, a button, and some text boxes. If you are running the TSS Socket Server on the same device, leave the input field as it is and press the Connect button. If the TSS is running on another device on the network, type the ip address of the device into the input field, and then press the Connect button.
 7. The project should connect to the TSS over websockets and start receiving data. On the TSS side, the socket server should print that a user has connected. The TSS should start sending data, and the data will be displayed as text in Unity.
