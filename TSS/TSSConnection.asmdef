@@ -1,6 +1,0 @@
-{
-	"name": "suits.tss",
-	"references": [
-		"endel.nativewebsocket"
-	]
-}

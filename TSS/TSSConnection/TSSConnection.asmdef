@@ -1,0 +1,7 @@
+{
+	"name": "suits.tss.connection",
+	"references": [
+		"endel.nativewebsocket",
+		"suits.tss.msgclasses"
+	]
+}
