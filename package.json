@@ -19,9 +19,9 @@
     "hideInEditor": false,
     "samples": [
       {
-        "displayName": "Simple TSS Connection Sample",
-        "description": "Just add as a script to any GameObject, and if you run the TSS on the same machine, logs incoming messages in the console",
-        "path": "Samples~/SampleScript"
+        "displayName": "SampleTSSScene",
+        "description": "A sample scene which allows connecting over ws and reading incoming messages",
+        "path": "Samples~/SampleTSSScene"
       }
     ]
   }
