@@ -27,7 +27,6 @@ public class ConnScript : MonoBehaviour
     {
         tss = new TSSConnection();
         inputField = GameObject.Find("Socket URI Input Field").GetComponent<TMPro.TMP_InputField>();
-        tssUri = inputField.text;
 
         //statusBox = GameObject.Find("Status box").GetComponent<TMPro.TMP_Text>();
         statusBox = null;
@@ -56,6 +55,7 @@ public class ConnScript : MonoBehaviour
 
     public async void Connect()
     {
+        tssUri = inputField.text;
         var connecting = tss.ConnectToURI(tssUri);
         Debug.Log("Connecting to " + tssUri);
         // Create a function that takes asing TSSMsg parameter and returns void. For example:

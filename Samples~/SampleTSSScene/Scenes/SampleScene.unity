@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "ws://192.168.0.100:3001\u200B"
+  m_text: "ws://localhost:3001\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 1484567920}
   - component: {fileID: 1484567919}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Telemetry Stream Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,6 +627,7 @@ RectTransform:
   - {fileID: 580343680}
   - {fileID: 2106607294}
   - {fileID: 1744728592}
+  - {fileID: 1922924425}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1219,13 +1220,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922924424}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 289.40002, y: 195, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 287.40002, y: 209, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1484567922}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1922924426
 MonoBehaviour:
@@ -1236,7 +1237,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1922924424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021b0e414b84256458e7e44ffad0cd92, type: 3}
+  m_Script: {fileID: 11500000, guid: 665aebc6ed6a2154aaa21728a7c48f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1945922191
@@ -1377,7 +1378,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: ws://192.168.0.100:3001
+  m_Text: ws://localhost:3001
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0

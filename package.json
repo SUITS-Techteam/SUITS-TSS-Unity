@@ -19,9 +19,9 @@
     "hideInEditor": false,
     "samples": [
       {
-        "displayName": "Simple TSS Connection Sample",
+        "displayName": "SampleTSSScene",
         "description": "A sample scene which allows connecting over ws and reading incoming messages",
-        "path": "Samples~/SampleScene"
+        "path": "Samples~/SampleTSSScene"
       }
     ]
   }
