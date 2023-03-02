@@ -9,7 +9,7 @@ namespace TSS.Msgs
     {
         public List<GPSMsg> GPS;
         public List<IMUMsg> IMU;
-        public List<EVASimState> EVA;
+        public List<EVAMsg> EVA;
         public List<UIAMsg> UIA;
     }
 
