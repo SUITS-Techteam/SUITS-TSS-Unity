@@ -10,18 +10,11 @@ public class ConnScript : MonoBehaviour
 
     int msgCount = 0;
 
-    TMPro.TMP_Text statusBox;
     TMPro.TMP_Text gpsMsgBox;
     TMPro.TMP_Text imuMsgBox;
     TMPro.TMP_Text evaMsgBox;
 
     TMPro.TMP_InputField inputField;
-
-    string openStatus = "";
-    string connectionStatus = "";
-    string errorStatus = "";
-    string closeStatus = "";
-    string tssUri = "";
 
     // Start is called before the first frame update
     async void Start()
@@ -29,8 +22,6 @@ public class ConnScript : MonoBehaviour
         tss = new TSSConnection();
         inputField = GameObject.Find("Socket URI Input Field").GetComponent<TMPro.TMP_InputField>();
 
-        //statusBox = GameObject.Find("Status box").GetComponent<TMPro.TMP_Text>();
-        statusBox = null;
         gpsMsgBox = GameObject.Find("GPS Msg Box").GetComponent<TMPro.TMP_Text>();
         imuMsgBox = GameObject.Find("IMU Msg Box").GetComponent<TMPro.TMP_Text>();
         evaMsgBox = GameObject.Find("EVA Msg Box").GetComponent<TMPro.TMP_Text>();
@@ -42,15 +33,6 @@ public class ConnScript : MonoBehaviour
     {
         // Updates the websocket once per frame
         tss.Update();
-        
-        if (statusBox == null) return;
-        statusBox.text =
-            "tssUri: " + tssUri + "\n" +
-            "openStatus: " + openStatus + "\n" +
-            "connectionStatus" + connectionStatus + "\n" +
-            "errorStatus: " + errorStatus + "\n" +
-            "closeStatus: " + closeStatus + "\n" +
-            "msg #: " + msgCount + "\n";
 
     }
 
