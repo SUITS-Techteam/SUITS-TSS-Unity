@@ -47,12 +47,13 @@ public class ConnScript : MonoBehaviour
         tss.OnTSSTelemetryMsg += (telemMsg) =>
         {
             msgCount++;
-            Debug.Log("msgCount: " + msgCount);
+            Debug.Log("Message #" + msgCount + "\nMessage:\n " + JsonUtility.ToJson(telemMsg, prettyPrint: true));
 
             if (telemMsg.GPS.Count > 0)
             {
                 gpsMsgBox.text = "GPS Msg: " + JsonUtility.ToJson(telemMsg.GPS[0], prettyPrint: true);
-            } else
+            }
+            else
             {
                 gpsMsgBox.text = "No GPS Msg received";
             }
