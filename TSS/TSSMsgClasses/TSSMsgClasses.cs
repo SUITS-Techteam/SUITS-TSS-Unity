@@ -11,6 +11,7 @@ namespace TSS.Msgs
         public List<IMUMsg> IMU;
         public List<EVAMsg> EVA;
         public List<UIAMsg> UIA;
+        public List<UIAControlMsg> UIA_CONTROLS;
     }
 
     [System.Serializable]
@@ -101,6 +102,30 @@ namespace TSS.Msgs
         public bool emu2_O2;
         public bool O2_vent;
         public bool depress_pump;
+        public string createdAt;
+        public string updatedAt;
+    }
+
+    [System.Serializable]
+    public class UIAControlMsg
+    {
+        public int id;
+        public int room;
+        public string started_at;
+        public string emu1;
+        public string emu2;
+        public double o2_supply_pressure1;
+        public double o2_supply_pressure2;
+        public string ev1_supply;
+        public string ev2_supply;
+        public string ev1_waste;
+        public string ev2_waste;
+        public string emu1_O2;
+        public string emu2_O2;
+        public double oxygen_supp_out1;
+        public double oxygen_supp_out2;
+        public double O2_vent;
+        public double depress_pump;
         public string createdAt;
         public string updatedAt;
     }
