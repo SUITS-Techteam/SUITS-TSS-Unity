@@ -721,7 +721,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1922924426}
-        m_TargetAssemblyTypeName: ConnScript, Assembly-CSharp
+        m_TargetAssemblyTypeName: ConnScript, ConnScript
         m_MethodName: Connect
         m_Mode: 1
         m_Arguments:
@@ -1237,7 +1237,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1922924424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665aebc6ed6a2154aaa21728a7c48f6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6617230b5ce1f4049bf5c96d931122db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1945922191
@@ -1341,19 +1341,7 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1922924426}
-        m_TargetAssemblyTypeName: ConnScript, Assembly-CSharp
-        m_MethodName: UpdateUri
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
