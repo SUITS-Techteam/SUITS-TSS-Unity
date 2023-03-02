@@ -50,7 +50,7 @@ namespace TSS.Msgs
     }
 
     [System.Serializable]
-    public class EVASimState
+    public class EVAMsg
     {
         public int id;
         public int room;
