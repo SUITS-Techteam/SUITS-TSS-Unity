@@ -80,17 +80,17 @@ public class ConnScript : MonoBehaviour
         // Similar to OnTSSTelemetryMsg, create functions with the appropriate return type and parameters, and subscribe to them
         tss.OnOpen += () =>
         {
-            openStatus = "Open";
+            Debug.Log("Websocket connectio opened");
         };
 
         tss.OnError += (string e) =>
         {
-            errorStatus = "Error occured: " + e;
+            Debug.Log("Websocket error occured: " + e);
         };
 
         tss.OnClose += (e) =>
         {
-             closeStatus = "Closed with code: " + e;
+            Debug.Log("Websocket closed with code: " + e);
         };
 
         await connecting;
