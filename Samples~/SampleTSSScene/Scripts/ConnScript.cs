@@ -6,6 +6,7 @@ using TSS;
 public class ConnScript : MonoBehaviour
 {
     TSSConnection tss;
+    string tssUri;
 
     int msgCount = 0;
 
@@ -112,11 +113,6 @@ public class ConnScript : MonoBehaviour
 
         await connecting;
 
-    }
-
-    public void UpdateUri()
-    {
-        tssUri = inputField.text;
     }
 
     // An example handler for the OnTSSMsgReceived event which just serializes to JSON and prints it all out
