@@ -7,9 +7,11 @@ namespace TSS.Msgs
     [System.Serializable]
     public class TSSMsg
     {
-        public List<GPSMsg> gpsmsgs;
-        public List<IMUMsg> imumsgs;
-        public List<EVASimState> simulationstates;
+        public List<GPSMsg> GPS;
+        public List<IMUMsg> IMU;
+        public List<EVAMsg> EVA;
+        public List<UIAMsg> UIA;
+        public List<UIAControlMsg> UIA_CONTROLS;
     }
 
     [System.Serializable]
@@ -50,7 +52,7 @@ namespace TSS.Msgs
     }
 
     [System.Serializable]
-    public class EVASimState
+    public class EVAMsg
     {
         public int id;
         public int room;
@@ -81,6 +83,49 @@ namespace TSS.Msgs
         public string t_oxygen;
         public double cap_water;
         public string t_water;
+        public string createdAt;
+        public string updatedAt;
+    }
+
+    [System.Serializable]
+    public class UIAMsg
+    {
+        public int id;
+        public int room;
+        public string started_at;
+        public bool emu1;
+        public bool ev1_supply;
+        public bool emu1_O2;
+        public bool emu2;
+        public bool ev2_supply;
+        public bool ev_waste;
+        public bool emu2_O2;
+        public bool O2_vent;
+        public bool depress_pump;
+        public string createdAt;
+        public string updatedAt;
+    }
+
+    [System.Serializable]
+    public class UIAControlMsg
+    {
+        public int id;
+        public int room;
+        public string started_at;
+        public string emu1;
+        public string emu2;
+        public double o2_supply_pressure1;
+        public double o2_supply_pressure2;
+        public string ev1_supply;
+        public string ev2_supply;
+        public string ev1_waste;
+        public string ev2_waste;
+        public string emu1_O2;
+        public string emu2_O2;
+        public double oxygen_supp_out1;
+        public double oxygen_supp_out2;
+        public double O2_vent;
+        public double depress_pump;
         public string createdAt;
         public string updatedAt;
     }
