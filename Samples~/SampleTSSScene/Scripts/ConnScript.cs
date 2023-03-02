@@ -66,26 +66,26 @@ public class ConnScript : MonoBehaviour
             msgCount++;
             Debug.Log("msgCount: " + msgCount);
 
-            if (telemMsg.gpsmsgs.Count > 0)
+            if (telemMsg.GPS.Count > 0)
             {
-                gpsMsgBox.text = "GPS Msg: " + JsonUtility.ToJson(telemMsg.gpsmsgs[0], prettyPrint: true);
+                gpsMsgBox.text = "GPS Msg: " + JsonUtility.ToJson(telemMsg.GPS[0], prettyPrint: true);
             } else
             {
                 gpsMsgBox.text = "No GPS Msg received";
             }
 
-            if (telemMsg.imumsgs.Count > 0)
+            if (telemMsg.IMU.Count > 0)
             {
-                imuMsgBox.text = "IMU Msg: " + JsonUtility.ToJson(telemMsg.imumsgs[0], prettyPrint: true);
+                imuMsgBox.text = "IMU Msg: " + JsonUtility.ToJson(telemMsg.IMU[0], prettyPrint: true);
             }
             else
             {
                 imuMsgBox.text = "No IMU Msg received";
             }
 
-            if (telemMsg.simulationstates.Count > 0)
+            if (telemMsg.EVA.Count > 0)
             {
-                evaMsgBox.text = "EVA Msg: " + JsonUtility.ToJson(telemMsg.simulationstates[0], prettyPrint: true);
+                evaMsgBox.text = "EVA Msg: " + JsonUtility.ToJson(telemMsg.EVA[0], prettyPrint: true);
             }
             else
             {
