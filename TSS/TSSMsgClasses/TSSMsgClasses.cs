@@ -7,9 +7,9 @@ namespace TSS.Msgs
     [System.Serializable]
     public class TSSMsg
     {
-        public List<GPSMsg> gpsmsgs;
-        public List<IMUMsg> imumsgs;
-        public List<EVASimState> simulationstates;
+        public List<GPSMsg> GPS;
+        public List<IMUMsg> IMU;
+        public List<EVASimState> EVA;
     }
 
     [System.Serializable]
