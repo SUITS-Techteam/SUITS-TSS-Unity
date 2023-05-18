@@ -1,7 +1,9 @@
 # SUITS-TSS-Unity
-Repo for the TSS Unity package. As of now, it provides classes for the data you will receive from the TSS, as well as the TSSConnection class, which is just a wrapper around NativeWebSockets which also deserializes messages from the TSS using Unity's JSONUtility. As the TSS is updated, this repo will also be updated to handle authorization, any new data the TSS sends, and anything else necessary to connect the HMD to the TSS. It should work in both the Unity editor and as UWP apps on the Hololens2.
+As of now, this package provides classes for the data you will receive from the TSS, as well as the TSSConnection class, which is just a wrapper around NativeWebSockets which also deserializes messages from the TSS using Unity's JSONUtility. As the TSS is updated, this repo will also be updated to handle authorization, any new data the TSS sends, and anything else necessary to connect the HMD to the TSS. It should work in both the Unity editor and as UWP apps on the Hololens2.
 
-Feel free to use it directly in your project, or just to get an idea of how you can go about communicating with the TSS.
+This version works with v1.0.0 of the [SUITS_Test_TSS](https://github.com/SUITS-Techteam/SUITS_Test_TSS/tree/v1.0.0)
+
+Feel free to use it directly in your poject, or just to get an idea of how you can go about communicating with the TSS.
 
 # Quick Start
 1. Add [NativeWebSocket](https://github.com/endel/NativeWebSocket) to your project following the directions it provides.
