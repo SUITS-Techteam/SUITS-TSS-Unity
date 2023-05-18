@@ -7,126 +7,226 @@ namespace TSS.Msgs
     [System.Serializable]
     public class TSSMsg
     {
-        public List<GPSMsg> GPS;
-        public List<IMUMsg> IMU;
-        public List<EVAMsg> EVA;
-        public List<UIAMsg> UIA;
-        public List<UIAControlMsg> UIA_CONTROLS;
+        public GPSMsg gpsMsg;
+        public IMUMsg imuMsg;
+        public SimulationStates simulationStates;
+        public SimulationFailures simulationFailures;
+        public UIAMsg uiaMsg;
+        public SpecMsg specMsg;
+        public RoverMsg roverMsg;
     }
 
     [System.Serializable]
     public class GPSMsg
     {
-        public int id;
-        public string device;
         public int mode;
+        public string fix_status;
         public string time;
-        public double ept;
-        public double lat;
-        public double lon;
-        public double alt;
-        public double epx;
-        public double epy;
-        public double epv;
-        public double track;
-        public double speed;
-        public double climb;
-        public double eps;
-        public double epc;
+        public float ept;
+        public float lat;
+        public float lon;
+        public float alt;
+        public float epx;
+        public float epy;
+        public float epv;
+        public float track;
+        public float speed;
+        public float climb;
+        public float eps;
+        public float epc;
     }
 
     [System.Serializable]
     public class IMUMsg
     {
-        public int id;
-        public double heading;
-        public double accel_x;
-        public double accel_y;
-        public double accel_z;
-        public double gyro_x;
-        public double gyro_y;
-        public double gyro_z;
-        public double mag_x;
-        public double mag_y;
-        public double mag_z;
+        public string user_guid;
+        public float heading;
+        public float accel_x;
+        public float accel_y;
+        public float accel_z;
+        public float gyro_x;
+        public float gyro_y;
+        public float gyro_z;
+        public float mag_x;
+        public float mag_y;
+        public float mag_z;
     }
 
     [System.Serializable]
-    public class EVAMsg
+    public class SimulationStates
     {
-        public int id;
-        public int room;
+        public int room_id;
         public bool isRunning;
         public bool isPaused;
-        public double time;
+        public float time;
         public string timer;
-        public string startedAt;
-        public double heart_bpm;
-        public double p_sub;
-        public double p_suit;
-        public double t_sub;
-        public double v_fan;
-        public double p_o2;
-        public double rate_o2;
-        public double batteryPercent;
-        public double cap_battery;
-        public double battery_out;
-        public double p_h2o_g;
-        public double p_h2o_l;
-        public double p_sop;
-        public double rate_sop;
-        public string t_battery;
-        public double t_oxygenPrimary;
-        public double t_oxygenSec;
-        public double ox_primary;
-        public double ox_secondary;
-        public string t_oxygen;
-        public double cap_water;
-        public string t_water;
-        public string createdAt;
-        public string updatedAt;
+        public float primary_oxygen;
+        public float secondary_oxygen;
+        public float suits_pressure;
+        public float sub_pressure;
+        public float o2_pressure;
+        public float o2_rate;
+        public float h2o_gas_pressure;
+        public float h2o_liquid_pressure;
+        public float sop_pressure;
+        public float sop_rate;
+        public float heart_rate;
+        public float fan_tachometer;
+        public float battery_capacity;
+        public float temperature;
+        public float battery_time_left;
+        public float o2_time_left;
+        public float h2o_time_left;
+        public float battery_percentage;
+        public float battery_output;
+        public float oxygen_primary_time;
+        public float oxygen_secondary_time;
+        public float water_capacity;
+    }
+
+    [System.Serializable]
+    public class SimulationFailures
+    {
+        public string started_at;
+        public bool o2_error;
+        public bool pump_error;
+        public bool power_error;
+        public bool fan_error;
     }
 
     [System.Serializable]
     public class UIAMsg
     {
-        public int id;
-        public int room;
+        public int room_id;
         public string started_at;
-        public bool emu1;
-        public bool ev1_supply;
-        public bool emu1_O2;
-        public bool emu2;
-        public bool ev2_supply;
-        public bool ev_waste;
-        public bool emu2_O2;
-        public bool O2_vent;
-        public bool depress_pump;
-        public string createdAt;
-        public string updatedAt;
+        public bool emu1_pwr_switch;
+        public bool ev1_supply_switch;
+        public bool emu1_water_waste;
+        public bool emu1_o2_supply_switch;
+        public bool o2_vent_switch;
+        public bool depress_pump_switch;
+        // public string createdAt;
+        // public string updatedAt;
     }
 
     [System.Serializable]
-    public class UIAControlMsg
+    public class UIAState
+    { }
+
+    [System.Serializable]
+    public class SpecMsg
     {
-        public int id;
-        public int room;
-        public string started_at;
-        public string emu1;
-        public string emu2;
-        public double o2_supply_pressure1;
-        public double o2_supply_pressure2;
-        public string ev1_supply;
-        public string ev2_supply;
-        public string ev1_waste;
-        public string ev2_waste;
-        public string emu1_O2;
-        public string emu2_O2;
-        public double oxygen_supp_out1;
-        public double oxygen_supp_out2;
-        public double O2_vent;
-        public double depress_pump;
-        public string createdAt;
-        public string updatedAt;
+        public float SiO2;
+        public float TiO2;
+        public float Al2O3;
+        public float FeO;
+        public float MnO;
+        public float MgO;
+        public float CaO;
+        public float K2O;
+        public float P2O3;
+    }
+    
+    [System.Serializable]
+    public class RoverMsg
+    {
+        public float lat;
+        public float lon;
+
+        public string navigation_status;    // either "NAVIGATING" or "NOT_NAVIGATING"
+        public float goal_lat;
+        public float goal_lon;
+    }
+    
+    [System.Serializable]
+    public class HMDInfo
+    {
+        public string team_name;
+        public string username;
+        public string university;
+        public string user_guid;
+
+        public HMDInfo(string team_name, string username, string university, string user_guid)
+        {
+            this.team_name = team_name;
+            this.username = username;
+            this.university = university;
+            this.user_guid = user_guid;
+        }
+
+    }
+
+    // The following are all for the HMD registration
+    [System.Serializable]
+    public class HMDRegistration
+    {
+        public string MSGTYPE = "DATA";
+        public HMDRegistrationBlob BLOB;
+
+        public HMDRegistration(HMDInfo hmd_info)
+        {
+            this.BLOB = new HMDRegistrationBlob(hmd_info);
+        }
+    }
+
+    [System.Serializable]
+    public class HMDRegistrationBlob
+    {
+        public string DATATYPE = "HMD";
+        public HMDInfo DATA;
+
+        public HMDRegistrationBlob(HMDInfo hmd_info)
+        {
+            this.DATA = hmd_info;
+        }
+    }
+
+
+    // The following are for messages sent to the TSS by the user
+    [System.Serializable]
+    public class RoverNavigateMsg
+    {
+        public RoverField rover;
+        public RoverNavigateMsg(float goal_lat, float goal_lon)
+        {
+            this.rover = new RoverField(goal_lat, goal_lon);
+        }
+
+        [System.Serializable]
+        public class RoverField
+        {
+            public string cmd;
+            public float goal_lat;
+            public float goal_lon;
+            public RoverField(float goal_lat, float goal_lon)
+            {
+                this.cmd = "navigate";
+                this.goal_lat = goal_lat;
+                this.goal_lon = goal_lon;
+            }
+        }
+
+    }
+
+    [System.Serializable]
+    public class RoverRecallMsg
+    {
+        public RoverField rover;
+
+        public RoverRecallMsg()
+        {
+            this.rover = new RoverField();
+        }
+
+        [System.Serializable]
+        public class RoverField
+        {
+            public string cmd;
+            public RoverField()
+            {
+                this.cmd = "recall";
+            }
+        }
+
     }
 }
