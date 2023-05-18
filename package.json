@@ -1,6 +1,6 @@
 {
     "name": "suits.tss",
-    "version": "1.0.0",
+    "version": "2.0.2",
     "displayName": "SUITS TSS Unity",
     "description": "A package to simplify connecting with the TSS.",
     "unity": "2021.3",
