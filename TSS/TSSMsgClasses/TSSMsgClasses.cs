@@ -62,7 +62,7 @@ namespace TSS.Msgs
         public string timer;
         public float primary_oxygen;
         public float secondary_oxygen;
-        public float suits_pressure;
+        public float suit_pressure;
         public float sub_pressure;
         public float o2_pressure;
         public float o2_rate;
@@ -111,7 +111,13 @@ namespace TSS.Msgs
 
     [System.Serializable]
     public class UIAState
-    { }
+    {
+        public bool emu1_is_booted;
+        public float uia_supply_pressure;
+        public float water_level;
+        public float airlock_pressure;
+        public bool depress_pump_fault;
+    }
 
     [System.Serializable]
     public class SpecMsg
