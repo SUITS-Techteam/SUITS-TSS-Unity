@@ -63,7 +63,7 @@ namespace TSS.Msgs
         public string timer;
         public float primary_oxygen;
         public float secondary_oxygen;
-        public float suit_pressure;
+        public float suits_pressure;
         public float sub_pressure;
         public float o2_pressure;
         public float o2_rate;
