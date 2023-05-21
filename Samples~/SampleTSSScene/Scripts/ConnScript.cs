@@ -15,6 +15,7 @@ public class ConnScript : MonoBehaviour
     TMPro.TMP_Text simulationStatesMsgBox;
     TMPro.TMP_Text simulationFailuresMsgBox;
     TMPro.TMP_Text uiaSwitchesMsgBox;
+    TMPro.TMP_Text uiaStateMsgBox;
     TMPro.TMP_Text specMsgBox;
     TMPro.TMP_Text roverMsgBox;
 
@@ -29,6 +30,8 @@ public class ConnScript : MonoBehaviour
     async void Start()
     {
         tss = new TSSConnection();
+
+        view = View.Page1;
 
         //The rest of the Start() method is for setting up the sample
         uriInputField = GameObject.Find("Socket URI Input Field").GetComponent<TMPro.TMP_InputField>();
@@ -52,6 +55,12 @@ public class ConnScript : MonoBehaviour
         Debug.Log("uia switches");
         uiaSwitchesMsgBox.gameObject.SetActive(false);
 
+        
+        uiaStateMsgBox = GameObject.Find("UIA State Msg Box").GetComponent<TMPro.TMP_Text>();
+        Debug.Log("uia state");
+        uiaSwitchesMsgBox.gameObject.SetActive(false);
+
+
         specMsgBox = GameObject.Find("Spec Msg Box").GetComponent<TMPro.TMP_Text>();
         Debug.Log("spec");
         specMsgBox.gameObject.SetActive(false);
@@ -74,9 +83,9 @@ public class ConnScript : MonoBehaviour
     {
       
         string team_name = "Interscholar";
-        string username = "Team 1";
-        string university = "Some Uni";
-        string user_guid = "fdbee7e5-9887-495e-aabb-f10d1386a7e9";
+        string username = "IS";
+        string university = "Cerritos | College of the Desert | CSU Fullerton',";
+        string user_guid = "a75e207e-f70f-4e4f-a66a-9f47bb84ab29";
         tssUri = uriInputField.text;
 
         // Pass in your team's information here. user_guid is most important - it must match your visionkit
@@ -102,6 +111,7 @@ public class ConnScript : MonoBehaviour
             simulationFailuresMsgBox.text = "Simulation Failures Msg: " + JsonUtility.ToJson(telemMsg.simulationFailures, prettyPrint: true);
 
             roverMsgBox.text = "Rover Msg: " + JsonUtility.ToJson(telemMsg.roverMsg, prettyPrint: true);
+            uiaStateMsgBox.text = "UIA State Msg: " + JsonUtility.ToJson(telemMsg.uiaState, prettyPrint: true);
 
             // evaMsgBox.text = "EVA Msg: " + JsonUtility.ToJson(telemMsg.simulationStates, prettyPrint: true);
 
@@ -126,6 +136,11 @@ public class ConnScript : MonoBehaviour
 
         await connecting;
 
+    }
+
+    public void DisconnectFromTSS()
+    {
+        tss.Disconnect();
     }
 
     public void SendNavigationButtonCallback()
@@ -154,6 +169,8 @@ public class ConnScript : MonoBehaviour
         {
             this.view = View.Page2;
             roverMsgBox.gameObject.SetActive(false);
+            uiaStateMsgBox.gameObject.SetActive(false);
+
 
             gpsMsgBox.gameObject.SetActive(true);
             imuMsgBox.gameObject.SetActive(true);
@@ -178,6 +195,7 @@ public class ConnScript : MonoBehaviour
             uiaSwitchesMsgBox.gameObject.SetActive(false);
 
             roverMsgBox.gameObject.SetActive(true);
+            uiaStateMsgBox.gameObject.SetActive(true);
         }
     }
 

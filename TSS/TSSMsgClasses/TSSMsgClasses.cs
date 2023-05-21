@@ -12,6 +12,7 @@ namespace TSS.Msgs
         public SimulationStates simulationStates;
         public SimulationFailures simulationFailures;
         public UIAMsg uiaMsg;
+        public UIAState uiaState;
         public SpecMsg specMsg;
         public RoverMsg roverMsg;
     }
@@ -74,9 +75,9 @@ namespace TSS.Msgs
         public float fan_tachometer;
         public float battery_capacity;
         public float temperature;
-        public float battery_time_left;
-        public float o2_time_left;
-        public float h2o_time_left;
+        public string battery_time_left;
+        public string o2_time_left;
+        public string h2o_time_left;
         public float battery_percentage;
         public float battery_output;
         public float oxygen_primary_time;
