@@ -42,13 +42,14 @@ namespace TSS {
             this.uri = uri;
         }
 
-        private async void OnApplicationQuit()
+        private async Task OnApplicationQuit()
         {
             await websocket.Close();
         }
 
         public async Task ConnectToURI(string uri, string team_name, string username, string university, string user_guid)
         {
+            await this.Disconnect();
             this.uri = uri;
             websocket = new WebSocket(uri);
 
@@ -100,6 +101,23 @@ namespace TSS {
         {
             TSS.Msgs.RoverRecallMsg rover_recall_msg = new TSS.Msgs.RoverRecallMsg();
             websocket.Send(System.Text.Encoding.UTF8.GetBytes(JsonUtility.ToJson(rover_recall_msg)));
+        }
+
+        public async Task Disconnect()
+        {
+
+            if (this.websocket is null)
+            {
+                Debug.Log("tss.websocket is null");
+                return;
+            }
+            if (this.websocket.State == NativeWebSocket.WebSocketState.Closed)
+            {
+                Debug.Log("Already Closed");
+                return;
+            }
+
+            await this.websocket.Close();
         }
     }
 }
